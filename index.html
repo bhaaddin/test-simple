@@ -1,1 +1,137 @@
-<h1>Hello Bahaa</h1><button onclick='alert("Hi")'>Click</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Test</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.container{
+    width:400px;
+    margin:80px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0 0 0 / 0.2);
+}
+
+h1{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#333;
+}
+
+#output{
+    margin-top:20px;
+    padding:10px;
+    background:#eee;
+    border-radius:5px;
+    min-height:40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Testing App</h1>
+ <h1>Hello Bahaa! 🚀</h1>
+<input type="text" id="nameInput" placeholder="Type something">
+
+<button id="showButton">Show Text</button>
+
+<button id="clearButton">Clear</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+const nameInput = document.getElementById("nameInput");
+
+const showButton = document.getElementById("showButton");
+
+const clearButton = document.getElementById("clearButton");
+
+const output = document.getElementById("output");
+
+function showText(){
+
+    const text = nameInput.value;
+
+    if(text === ""){
+        output.innerHTML = "Please type something";
+        return;
+    }
+
+    output.innerHTML = "You typed: " + text;
+}
+
+function clearText(){
+
+    nameInput.value = "";
+
+    output.innerHTML = "";
+}
+
+showButton.addEventListener(
+    "click",
+    function(){
+        showText();
+    }
+);
+
+clearButton.addEventListener(
+    "click",
+    function(){
+        clearText();
+    }
+);
+
+nameInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            showText();
+        }
+
+    }
+);
+
+console.log("Test page loaded");
+
+</script>
+
+</body>
+</html>
+   
